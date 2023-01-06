@@ -64,24 +64,16 @@ def miniMaxSum(arr):
     totals = []
     toplam = 0
     perm = itertools.permutations(arr, 4)
+
     for i in list(perm):
         for k in range(4):
             toplam = i[k] + toplam
         totals.append(toplam)
         toplam = 0
-    print(max(totals), " ", min(totals))
-    #print(min_," ",max_)
+    print(min(totals), max(totals))
 
+if __name__ == '__main__':
 
-arr = [10, 23 ,35, 47 ,53]
-miniMaxSum(arr)
-totals=[]
-perm = itertools.permutations(arr,4)
-    for i in list(perm):
-        for k in range(4):
-            toplam = i[k] + toplam
-        totals.append(toplam)
-        toplam = 0
+    arr = list(map(int, input().rstrip().split()))
 
-
-print(max(totals)," ", min(totals))
+    miniMaxSum(arr)
